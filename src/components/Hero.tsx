@@ -10,9 +10,10 @@ const Hero = () => {
     const isInView = useInView(ref, { once: false, amount: 0.3 });
 
     return (
-        <section ref={ref} className="bg-white flex justify-center items-center py-4 mt-16">
+        <section
+            id="hero"
+            ref={ref} className="bg-white flex justify-center items-center py-4 pt-16">
             <motion.div
-                id=""
                 className="relative flex flex-col md:flex-row items-center justify-between p-8 md:p-12 bg-sky-100 mx-4 rounded-[50px] shadow-lg max-w-7xl w-full"
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}

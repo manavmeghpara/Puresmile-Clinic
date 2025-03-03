@@ -13,17 +13,18 @@ const services = [
 ];
 
 const fadeInVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } }
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
 };
 
 const Services = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { amount: 0.3 });
+    const isInView = useInView(ref, { once: false, amount: 0.3 });
 
     return (
-        <section ref={ref} id="services" className="bg-white text-sky-700 py-24 px-6 md:px-16">
-            <div className="max-w-5xl mx-auto">
+        <section ref={ref} id="services" className="bg-white text-sky-700 py-20 px-6 md:px-16">
+            <div className="max-w-6xl mx-auto">
+                {/* Title */}
                 <motion.h2
                     className="text-3xl md:text-4xl font-bold uppercase text-center mb-10"
                     initial="hidden"
@@ -33,22 +34,21 @@ const Services = () => {
                     Our Dental Services
                 </motion.h2>
 
-                <div className="grid gap-8">
+                {/* Services Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     {services.map((service, index) => (
                         <motion.div
                             key={service.id}
-                            className="flex items-start gap-6 p-6 bg-sky-100 rounded-xl shadow-lg"
-                            initial={{ opacity: 0, x: -70 }}
-                            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-                            transition={{ duration: 1, delay: index * 0.2 }}
+                            className="p-6 bg-sky-100 rounded-lg shadow-md flex flex-col items-start text-center sm:text-left"
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+                            transition={{ duration: 0.6, delay: index * 0.15 }}
                         >
-                            <span className="text-3xl font-bold text-sky-700">
-                                {service.id}
-                            </span>
-                            <div>
-                                <h3 className="text-xl font-semibold">{service.title}</h3>
-                                <p className="text-sky-800">{service.description}</p>
+                            <div className="flex">
+                                <span className="text-xl font-bold text-sky-700">{service.id}</span>
+                                <h3 className="text-lg font-semibold ml-2">{service.title}</h3>
                             </div>
+                            <p className="text-sky-800 text-sm mt-1">{service.description}</p>
                         </motion.div>
                     ))}
                 </div>
