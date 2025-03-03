@@ -1,24 +1,15 @@
 "use client";
 
-import { FC, useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const services = [
-    {
-        "id": "01",
-        "title": "Web Development",
-        "description": "Building high-performance, scalable web applications and websites that deliver seamless user experiences while aligning with your brand’s vision and business objectives."
-    },
-    {
-        "id": "02",
-        "title": "Mockup Design",
-        "description": "Transforming ideas into visually compelling and user-centric mockups, ensuring intuitive layouts, aesthetics, and seamless functionality before development begins."
-    },
-    {
-        "id": "03",
-        "title": "Workflow Design",
-        "description": "Optimizing and structuring business processes with efficient workflow solutions to enhance productivity and streamline operations."
-    }
+    { id: "01", title: "Dentures", description: "Custom-made removable dental prosthetics for restoring missing teeth and improving oral function." },
+    { id: "02", title: "Dental Implants", description: "Permanent tooth replacement solutions with titanium implants for a natural and long-lasting smile." },
+    { id: "03", title: "Teeth Whitening", description: "Professional whitening treatments to brighten and enhance the natural look of your teeth." },
+    { id: "04", title: "Root Canals", description: "Advanced endodontic procedures to treat infected tooth pulp and preserve natural teeth." },
+    { id: "05", title: "Orthodontics", description: "Braces and aligners designed to straighten teeth and correct bite issues for a healthier smile." },
+    { id: "06", title: "Diagnosis", description: "Comprehensive dental examinations and digital imaging to detect and prevent oral health issues." }
 ];
 
 const fadeInVariants = {
@@ -26,39 +17,37 @@ const fadeInVariants = {
     visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } }
 };
 
-const Services: FC = () => {
+const Services = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { amount: 0.2 }); // Retriggers animation when 20% is in view
+    const isInView = useInView(ref, { amount: 0.3 });
 
     return (
-        <section id="services" ref={ref} className="bg-black text-white pt-24 px-12 mx-auto md:px-24">
+        <section ref={ref} id="services" className="bg-white text-sky-700 py-24 px-6 md:px-16">
             <div className="max-w-5xl mx-auto">
                 <motion.h2
-                    className="text-3xl md:text-4xl font-bold text-purple-400 uppercase mb-8"
+                    className="text-3xl md:text-4xl font-bold uppercase text-center mb-10"
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                     variants={fadeInVariants}
                 >
-                    Services
+                    Our Dental Services
                 </motion.h2>
 
                 <div className="grid gap-8">
                     {services.map((service, index) => (
-                        //smooth slide-in effect.
                         <motion.div
                             key={service.id}
-                            className="flex items-start gap-6"
-                            initial={{ opacity: 0, x: -70 }}  // Initial state: Hidden & shifted left
-                            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }} // Animation trigger
-                            transition={{ duration: 1, delay: index * 0.2 }} // Smooth transition with stagger effect
+                            className="flex items-start gap-6 p-6 bg-sky-100 rounded-xl shadow-lg"
+                            initial={{ opacity: 0, x: -70 }}
+                            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+                            transition={{ duration: 1, delay: index * 0.2 }}
                         >
-
-                            <span className="text-3xl font-bold text-purple-400">
+                            <span className="text-3xl font-bold text-sky-700">
                                 {service.id}
                             </span>
                             <div>
                                 <h3 className="text-xl font-semibold">{service.title}</h3>
-                                <p className="text-gray-400">{service.description}</p>
+                                <p className="text-sky-800">{service.description}</p>
                             </div>
                         </motion.div>
                     ))}

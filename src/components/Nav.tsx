@@ -5,9 +5,7 @@ import React, { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 const navLinks = [
-    { title: "About", path: "#" },
-    { title: "Stack", path: "#stack" },
-    { title: "Projects", path: "#Project1" },
+    { title: "About Us", path: "#" },
     { title: "Services", path: "#services" },
     { title: "Contact", path: "#Contact" },
 ];
@@ -33,27 +31,30 @@ const Nav = () => {
     };
 
     return (
-        <nav className="fixed w-full top-0 z-50 flex justify-center py-4 px-6 text-white">
+        <nav className="fixed w-full top-0 z-50 flex justify-center h-16 text-black font-semibold">
             {/* Desktop Navbar */}
-            <div className="hidden md:flex items-center justify-center backdrop-blur-lg bg-black/55 border border-white/40 rounded-full px-6 py-3">
-                <ul className="flex space-x-9">
-                    {navLinks.map((link, index) => (
-                        <li key={index}>
-                            <Link
-                                href={link.path}
-                                className="hover:text-purple-400 transition-all duration-300"
-                            >
-                                {link.title}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
+            <div className="hidden md:flex items-center justify-between w-full backdrop-blur-lg drop-shadow-lg bg-white/85  py-3 px-24">
+                <div>PureSmile Clinic</div>
+                <div>
+                    <ul className="flex space-x-9">
+                        {navLinks.map((link, index) => (
+                            <li key={index}>
+                                <Link
+                                    href={link.path}
+                                    className="hover:text-purple-400 transition-all duration-300"
+                                >
+                                    {link.title}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
 
             {/* Mobile Menu Button */}
             <div
                 onClick={toggleNav}
-                className="md:hidden fixed top-6 right-6 border border-white/70 rounded p-2 text-white cursor-pointer z-50"
+                className="md:hidden fixed top-8 left-8 border bg-black/45 border-white/70 rounded p-2 text-white cursor-pointer z-50"
             >
                 {navOpen ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
             </div>

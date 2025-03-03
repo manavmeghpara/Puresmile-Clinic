@@ -1,107 +1,94 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
-import { useMotionValue, useMotionTemplate, motion, animate, useInView } from "framer-motion";
-import { FiArrowRight } from "react-icons/fi";
+import { motion, useInView } from "framer-motion";
+import { FaPhoneAlt } from "react-icons/fa";
+import { useRef } from "react";
 
-const COLORS_TOP = ["#1E67C6", "#CE84CF", "#13FFAA", "#DD335C"];
-
-function Hero() {
-    const color = useMotionValue(COLORS_TOP[0]);
-
-    useEffect(() => {
-        animate(color, COLORS_TOP, {
-            ease: "easeInOut",
-            duration: 4.5,
-            repeat: Infinity,
-            repeatType: "mirror"
-        });
-    }, [color]);
-
-    const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #000 50%, ${color})`;
-    const border = useMotionTemplate`1px solid ${color}`;
-    const boxShadow = useMotionTemplate`0px 4px 24px ${color}`;
-
-    // 🔹 Detect when this section is in view
+const Hero = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { amount: 0.3 });
-
-    // ✅ Scroll to Contact Section
-    const handleScrollToContact = () => {
-        const contactSection = document.querySelector("#Contact");
-        if (contactSection) {
-            contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-    };
+    const isInView = useInView(ref, { once: false, amount: 0.3 });
 
     return (
-        <motion.section
-            ref={ref}
-            style={{ backgroundImage }}
-            className="relative flex justify-center items-center h-[80vh] px-6 py-24 text-gray-200"
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-            <div id="hero" className="z-10 flex flex-col gap-y-3 items-center">
-                {/* Animated Heading */}
+        <section ref={ref} className="bg-white flex justify-center items-center py-4 mt-16">
+            <motion.div
+                id=""
+                className="relative flex flex-col md:flex-row items-center justify-between p-8 md:p-12 bg-sky-100 mx-4 rounded-[50px] shadow-lg max-w-7xl w-full"
+                initial={{ opacity: 0, y: 50 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+                {/* Left Content */}
                 <motion.div
-                    className="flex gap-3"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="md:w-1/2 text-center md:text-left"
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                    <span className="font-semibold bg-gradient-to-br from-white to-gray-600 bg-clip-text text-transparent text-4xl sm:text-6xl">
-                        PureSmile Clinic
-                    </span>
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-snug">
+                        Your Smile, Our Priority
+                    </h1>
+
+                    <p className="mt-4 text-gray-700 text-lg">
+                        Get expert dental care with cutting-edge technology and a gentle touch.
+                        Book an appointment today!
+                    </p>
+
+                    {/* Call to Action */}
+                    <motion.div
+                        className="mt-6 flex flex-col md:flex-row items-center gap-4"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                    >
+                        <button className="bg-sky-700 text-white px-6 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-sky-500 transition">
+                            Book Now
+                        </button>
+
+                        <div className="flex items-center gap-2">
+                            <div className="w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center">
+                                <FaPhoneAlt className="text-sky-700 text-lg" />
+                            </div>
+                            <div>
+                                <p className="text-sky-700 font-semibold text-sm">24/7 Emergency</p>
+                                <p className="text-gray-900 font-bold text-lg">03 482 394 123</p>
+                            </div>
+                        </div>
+                    </motion.div>
                 </motion.div>
 
-                {/* Animated Profile Picture */}
+                {/* Right Image */}
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className="md:w-1/2 flex justify-center mt-10 md:mt-0 relative"
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.8, delay: 0.3 }}
                 >
-                    <a href="https://github.com/Sahasawat-Boss" target="_blank" rel="noopener noreferrer">
-                        <Image
-                            className="mt-10 md:w-60 rounded-full hover:scale-110 transition-transform duration-300 cursor-pointer"
-                            src={"/profilepic.jpg"}
-                            alt="profile pic"
-                            width={150}
-                            height={150}
-                        />
-                    </a>
+                    <Image
+                        src="/pics/clinic2.avif"
+                        alt="Smiling Patient"
+                        width={480}
+                        height={480}
+                        className="rounded-3xl shadow-md"
+                    />
 
+                    {/* Floating Doctor Info */}
+                    <motion.div
+                        className="absolute bottom-5 left-5 bg-white rounded-lg shadow-md flex items-center p-3 gap-3"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                    >
+                        <Image src="/pics/profile1.1.jpg" alt="Doctor" width={50} height={50} className="rounded-xl" />
+                        <div>
+                            <p className="font-semibold text-gray-900">Dr. Samantha Alibee</p>
+                            <p className="text-gray-500 text-sm">Dental Consultant</p>
+                        </div>
+                    </motion.div>
                 </motion.div>
-
-                {/* Animated Subtitle */}
-                <motion.span
-                    className="mt-4 mb-10 inline-block rounded-full bg-gray-600/50 text-xs sm:text-lg px-5 py-1.5"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6, delay: 0.6 }}
-                >
-                    I am passionate about becoming a skilled full-stack developer.
-                </motion.span>
-
-                {/* ✅ Animated Contact Button with Scroll Function */}
-                <motion.button
-                    className="flex w-fit items-center gap-2 rounded-full px-5 py-2 text-lg cursor-pointer"
-                    style={{
-                        border,
-                        boxShadow
-                    }}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.85 }}
-                    onClick={handleScrollToContact} // Calls the scroll function
-                >
-                    Contact Me
-                    <FiArrowRight className="mt-1 text-lg" />
-                </motion.button>
-            </div>
-        </motion.section>
+            </motion.div>
+        </section>
     );
-}
+};
 
 export default Hero;
