@@ -52,11 +52,8 @@ function Hero() {
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                    <span className="text-white/40 text-4xl sm:text-6xl font-black">
-                        Hello, I&apos;m
-                    </span>
-                    <span className="bg-gradient-to-br from-white to-gray-600 bg-clip-text text-transparent text-4xl sm:text-6xl">
-                        Boss
+                    <span className="font-semibold bg-gradient-to-br from-white to-gray-600 bg-clip-text text-transparent text-4xl sm:text-6xl">
+                        PureSmile Clinic
                     </span>
                 </motion.div>
 
