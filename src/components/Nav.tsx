@@ -9,8 +9,8 @@ import { FaHome, FaTooth, FaPhoneAlt, FaCommentDots, FaUserMd  } from "react-ico
 const navLinks = [
     { title: "Home", path: "#hero", icon: <FaHome /> },
     { title: "Services", path: "#services", icon: <FaTooth /> },
-    { title: "Reviews", path: "#reviews", icon: <FaCommentDots   /> },
     { title: "Team", path: "#team", icon: <FaUserMd   /> },
+    { title: "Reviews", path: "#reviews", icon: <FaCommentDots   /> },
     { title: "Contact", path: "#contact", icon: <FaPhoneAlt /> },
 ];
 

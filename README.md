@@ -2,13 +2,13 @@
 
 **Modern and responsive dental clinic website.**
 
-![Sample](image-1.png)
+![alt text](image.png)
 
 ---
 
 ## 🚀 Live Demo 
 
-🔗.....
+🔗 https://puresmile-clinic.vercel.app/
 
 ## 📌 Features
 
@@ -22,3 +22,5 @@
 
 ## 📷 Screenshots
 
+![alt text](image-2.png)
+![alt text](image-3.png)
