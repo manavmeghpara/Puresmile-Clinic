@@ -14,10 +14,10 @@ const Appointment = () => {
         <>
             <section ref={ref} id="contact"
                 className="pt-16 pb-6 px-6 md:px-16 bg-white text-sky-900">
-                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10 items-center">
+                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
                     {/* Left Side - Map */}
                     <motion.div
-                        className="relative w-full h-96 md:col-span-2 bg-gray-200 rounded overflow-hidden shadow-lg"
+                        className="relative w-full h-60 sm:h-96 md:col-span-2 bg-gray-200 rounded overflow-hidden shadow-lg"
                         initial={{ opacity: 0, x: -50 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -30,9 +30,9 @@ const Appointment = () => {
                         ></iframe>
 
                         {/* Address Box */}
-                        <div className="absolute bottom-6 left-6 bg-white p-3 rounded-lg shadow-md flex items-center gap-3">
-                            <div className="w-10 h-10 bg-sky-700 text-white flex items-center justify-center rounded-lg">
-                                <FaMapMarkerAlt className="text-lg" />
+                        <div className="absolute bottom-24 md:bottom-44 left-28 md:left-32 bg-white p-2 rounded-lg shadow-lg shadow-black/50 flex items-center gap-3">
+                            <div className="w-8 h-8 bg-sky-200 text-white flex items-center justify-center rounded-lg">
+                                <FaMapMarkerAlt className="text-lg text-red-500" />
                             </div>
                             <p className="text-sm font-semibold text-gray-900">
                                 Demo PureSmile
@@ -47,7 +47,7 @@ const Appointment = () => {
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <h3 className="text-sky-700 font-bold uppercase text-sm">Book Appointment</h3>
+                        <h3 className="text-sky-700 font-bold uppercase text-xl">Book Appointment</h3>
                         <p className="text-gray-900 mt-2">
                             Get professional dental services with the best experience.
                         </p>
