@@ -2,14 +2,16 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { FiSmile, FiShield, FiHeart, FiScissors, FiSearch } from "react-icons/fi";
+import { PiToothFill } from "react-icons/pi";
 
 const services = [
-    { id: "01", title: "Dentures", description: "Custom-made removable dental prosthetics for restoring missing teeth and improving oral function." },
-    { id: "02", title: "Dental Implants", description: "Permanent tooth replacement solutions with titanium implants for a natural and long-lasting smile." },
-    { id: "03", title: "Teeth Whitening", description: "Professional whitening treatments to brighten and enhance the natural look of your teeth." },
-    { id: "04", title: "Root Canals", description: "Advanced endodontic procedures to treat infected tooth pulp and preserve natural teeth." },
-    { id: "05", title: "Orthodontics", description: "Braces and aligners designed to straighten teeth and correct bite issues for a healthier smile." },
-    { id: "06", title: "Diagnosis", description: "Comprehensive dental examinations and digital imaging to detect and prevent oral health issues." }
+    { id: "01", title: "Dentures", description: "Custom-made removable dental prosthetics for restoring missing teeth and improving oral function.", icon: <FiSmile /> },
+    { id: "02", title: "Dental Implants", description: "Permanent tooth replacement solutions with titanium implants for a natural and long-lasting smile.", icon: <PiToothFill /> },
+    { id: "03", title: "Teeth Whitening", description: "Professional whitening treatments to brighten and enhance the natural look of your teeth.", icon: <FiShield /> },
+    { id: "04", title: "Root Canals", description: "Advanced endodontic procedures to treat infected tooth pulp and preserve natural teeth.", icon: <FiHeart /> },
+    { id: "05", title: "Orthodontics", description: "Braces and aligners designed to straighten teeth and correct bite issues for a healthier smile.", icon: <FiScissors /> },
+    { id: "06", title: "Diagnosis", description: "Comprehensive dental examinations and digital imaging to detect and prevent oral health issues.", icon: <FiSearch /> }
 ];
 
 const fadeInVariants = {
@@ -35,20 +37,26 @@ const Services = () => {
                 </motion.h2>
 
                 {/* Services Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
                     {services.map((service, index) => (
                         <motion.div
                             key={service.id}
-                            className="p-6 bg-sky-100 rounded-lg shadow-md flex flex-col items-start text-center sm:text-left"
+                            className="p-6 bg-sky-100 rounded-lg shadow-md flex flex-col items-center text-center sm:items-start sm:text-left "
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                             transition={{ duration: 0.6, delay: index * 0.15 }}
                         >
-                            <div className="flex">
-                                <span className="text-xl font-bold text-sky-700">{service.id}</span>
-                                <h3 className="text-lg font-semibold ml-2">{service.title}</h3>
+                            <div className="hover:scale-105 transition duration-150">
+                                {/* Icon */}
+                                <div className="text-sky-700 bg-white p-3 w-fit rounded-full shadow-lg mb-3 text-3xl">
+                                    {service.icon}
+                                </div>
+
+                                {/* Title & Description */}
+                                <h3 className="text-xl font-semibold">{service.title}</h3>
+                                <p className="text-sky-800 text-sm mt-2">{service.description}</p>
+
                             </div>
-                            <p className="text-sky-800 text-sm mt-1">{service.description}</p>
                         </motion.div>
                     ))}
                 </div>
