@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import { FaPhoneAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaRegSmileBeam, FaTooth, FaHeart } from "react-icons/fa";
 import { useRef, useState } from "react";
 
 const Hero = () => {
@@ -87,7 +87,7 @@ const Hero = () => {
                     <div>
                         <motion.div
                             onClick={() => setIsModalOpen(true)}
-                            className="absolute bottom-5 left-5 bg-white rounded-lg shadow-md flex items-center py-1.5 px-3 gap-3 cursor-pointer "
+                            className="absolute bottom-5 left-5 bg-white rounded-lg shadow-md flex items-center py-1.5 px-3 gap-3 cursor-pointer"
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={isInView ? { opacity: 1, scale: 1 } : {}}
                             transition={{ duration: 0.8, delay: 0.5 }}
@@ -97,6 +97,31 @@ const Hero = () => {
                                 <p className="font-semibold text-gray-900">Dr. Samantha Alibee</p>
                                 <p className="text-gray-500 text-sm">Dental Consultant</p>
                             </div>
+                        </motion.div>
+
+                        {/* Floating Icons */}
+                        <motion.div
+                            className="absolute top-5 left-5 text-yellow-500 text-base p-1.5 bg-white rounded-full drop-shadow-lg"
+                            animate={{ y: [0, -20, 0] }}
+                            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                        >
+                            <FaRegSmileBeam />
+                        </motion.div>
+
+                        <motion.div
+                            className="absolute top-10 right-10 text-sky-500 text-base p-1.5 bg-white rounded-full drop-shadow-lg"
+                            animate={{ y: [0, 12, 0] }}
+                            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                        >
+                            <FaTooth/>
+                        </motion.div>
+
+                        <motion.div
+                            className="absolute bottom-32 left-16 text-red-600 text-base p-1.5 bg-white rounded-full drop-shadow-lg"
+                            animate={{ y: [0, -10, 0] }}
+                            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                        >
+                            <FaHeart  />
                         </motion.div>
                     </div>
                 </motion.div>
