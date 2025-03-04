@@ -1,26 +1,28 @@
-import { AiFillGithub } from 'react-icons/ai';
+import { AiFillGithub } from "react-icons/ai";
 
 const socialLinks = [
     { href: "https://github.com/Sahasawat-Boss", Icon: AiFillGithub, label: "GitHub" },
 ];
 
 export const Footer = () => {
-
     return (
-        <footer className="py-8 mx-auto px-4">
-            <div className="text-lg my-10 flex flex-col justify-center items-center gap-10 ">
-                <p className="text-gray-900">
-                    Create by Boss © 2025. All rights reserved.
-                </p>
+        <footer className="bg-white text-gray-900 py-10 px-4">
+            <div className="max-w-4xl mx-auto flex flex-col items-center">
+                {/* Divider Line */}
+                <div className="w-full border-t border-gray-300 mb-6"></div>
 
-                <ul className="flex gap-5 flex-wrap">
+                {/* Footer Text */}
+                <p className="text-lg font-semibold">© 2025 Boss&apos;s Org. All rights reserved.</p>
+
+                {/* Social Icons */}
+                <ul className="flex gap-6 mt-6">
                     {socialLinks.map(({ href, Icon, label }) => (
                         <a
                             key={label}
                             href={href}
                             target="_blank"
                             aria-label={label}
-                            className="text-gray-900 flex items-center justify-center w-12 h-12 rounded-full hover:text-gray-400 transition-colors hover:scale-125"
+                            className="text-gray-900 flex items-center justify-center w-12 h-12 rounded-full hover:text-sky-700 transition-transform transform hover:scale-125"
                         >
                             <Icon size={45} />
                         </a>

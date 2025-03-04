@@ -24,7 +24,8 @@ const Services = () => {
     const isInView = useInView(ref, { once: false, amount: 0.3 });
 
     return (
-        <section ref={ref} id="services" className="bg-white text-sky-700 py-20 px-6 md:px-16">
+        <section ref={ref} id="services"
+            className="bg-white text-sky-700 py-20 px-6 md:px-16">
             <div className="max-w-6xl mx-auto">
                 {/* Title */}
                 <motion.h2
