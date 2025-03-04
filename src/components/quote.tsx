@@ -12,7 +12,7 @@ const Quote = () => {
             {/* Text Animation */}
             <motion.p
                 className="md:text-xl font-medium leading-relaxed"
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1, ease: "easeOut" }}
             >
@@ -22,7 +22,7 @@ const Quote = () => {
 
             {/* Underline Animation */}
             <motion.div
-                className="mt-4 mx-auto w-64 h-1 bg-sky-700 rounded-full"
+                className="mt-5 mx-auto w-64 h-1 bg-sky-700 rounded-full"
                 initial={{ scaleX: 0 }}
                 animate={isInView ? { scaleX: 1 } : {}}
                 transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}

@@ -16,7 +16,7 @@ const testimonials = [
     {
         id: 2,
         name: "Michael Smithree",
-        image: "/pics/testimonials/profile-ai8.webp",
+        image: "/pics/testimonials/profile-ai7.webp",
         review: "I was nervous about my root canal, but they made me feel comfortable. The procedure was painless, and the result was fantastic!",
         rating: 4.5
     },

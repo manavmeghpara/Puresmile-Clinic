@@ -26,7 +26,7 @@ const teamMembers = [
 ];
 
 const fadeInVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
@@ -35,7 +35,7 @@ const Team = () => {
     const isInView = useInView(ref, { once: false, amount: 0.3 });
 
     return (
-        <section ref={ref} id="team" className="bg-white text-gray-900 py-16 px-6 md:px-16">
+        <section ref={ref} id="team" className="bg-white text-gray-900 py-20 px-6 md:px-16">
             <div className="max-w-6xl mx-auto">
                 {/* Title Section */}
                 <motion.h2

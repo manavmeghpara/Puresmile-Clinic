@@ -84,19 +84,21 @@ const Hero = () => {
                     />
 
                     {/* Floating Doctor Info - Click to Open Modal */}
-                    <motion.div
-                        onClick={() => setIsModalOpen(true)}
-                        className="absolute bottom-5 left-5 bg-white rounded-lg shadow-md flex items-center p-3 gap-3 cursor-pointer hover:scale-105 transition-transform"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                        transition={{ duration: 0.8, delay: 0.5 }}
-                    >
-                        <Image src="/pics/profile1.1.jpg" alt="Doctor" width={50} height={50} className="rounded-xl" />
-                        <div>
-                            <p className="font-semibold text-gray-900">Dr. Samantha Alibee</p>
-                            <p className="text-gray-500 text-sm">Dental Consultant</p>
-                        </div>
-                    </motion.div>
+                    <div>
+                        <motion.div
+                            onClick={() => setIsModalOpen(true)}
+                            className="absolute bottom-5 left-5 bg-white rounded-lg shadow-md flex items-center py-1.5 px-3 gap-3 cursor-pointer "
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                            transition={{ duration: 0.8, delay: 0.5 }}
+                        >
+                            <Image src="/pics/profile1.1.jpg" alt="Doctor" width={50} height={50} className="rounded-xl" />
+                            <div>
+                                <p className="font-semibold text-gray-900">Dr. Samantha Alibee</p>
+                                <p className="text-gray-500 text-sm">Dental Consultant</p>
+                            </div>
+                        </motion.div>
+                    </div>
                 </motion.div>
             </motion.div>
 
@@ -111,7 +113,7 @@ const Hero = () => {
                 >
                     {/* Modal Content */}
                     <motion.div
-                        className="bg-white rounded-lg shadow-lg p-8 w-[90%] md:w-[420px]  relative"
+                        className="bg-white rounded-lg shadow-lg p-8 w-[90%] md:w-[420px] relative"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.8 }}
@@ -127,7 +129,7 @@ const Hero = () => {
 
                         {/* Doctor Image */}
                         <div className="flex justify-center">
-                            <Image src="/pics/profile1.1.jpg" alt="Doctor" width={100} height={100} className="rounded-xl shadow-md" />
+                            <Image src="/pics/profile1.1.jpg" alt="Doctor" width={200} height={200} className="rounded-xl shadow-md" />
                         </div>
 
                         {/* Doctor Info */}
