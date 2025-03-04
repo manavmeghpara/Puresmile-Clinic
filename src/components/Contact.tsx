@@ -11,10 +11,10 @@ const Appointment = () => {
     return (
         <section ref={ref} id="contact"
             className="py-16 px-6 md:px-16 bg-white text-sky-900">
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10 items-center">
                 {/* Left Side - Map */}
                 <motion.div
-                    className="relative w-full h-96 bg-gray-200 rounded-3xl overflow-hidden shadow-lg"
+                    className="relative w-full h-96 md:col-span-2 bg-gray-200 rounded overflow-hidden shadow-lg"
                     initial={{ opacity: 0, x: -50 }}
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.8, ease: "easeOut" }}
@@ -33,38 +33,42 @@ const Appointment = () => {
                             <FaMapMarkerAlt className="text-lg" />
                         </div>
                         <p className="text-sm font-semibold text-gray-900">
-                            PureSmile Chiang Mai,Thailand
+                            Demo PureSmile
                         </p>
                     </div>
                 </motion.div>
 
                 {/* Right Side - Form */}
                 <motion.div
-                    className="p-8 bg-sky-50 rounded-3xl shadow-lg"
+                    className="p-8 bg-sky-50 rounded-3xl shadow-lg md:col-span-3"
                     initial={{ opacity: 0, x: 50 }}
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
                     <h3 className="text-sky-700 font-bold uppercase text-sm">Book Appointment</h3>
-                    <h2 className="text-2xl font-bold text-gray-900 mt-2">
-                        Care at PureSmile is a pleasure
-                    </h2>
-                    <p className="text-gray-600 text-sm mt-2">
+                    <p className="text-gray-900 mt-2">
                         Get professional dental services with the best experience.
                     </p>
 
                     {/* Form */}
-                    <form className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <form className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-6 ">
                         <input type="text" placeholder="Your Name" className="input-style" />
                         <input type="email" placeholder="Your Email" className="input-style" />
-                        <select className="input-style">
-                            <option>Select Service</option>
+                        {/* Select Service */}
+                        <select className="input-style text-gray-900">
+                            <option value="" disabled selected className="text-gray-300">
+                                Select Service
+                            </option>
                             <option>Teeth Cleaning</option>
                             <option>Dental Implants</option>
                             <option>Root Canal</option>
                         </select>
-                        <select className="input-style">
-                            <option>Select Department</option>
+
+                        {/* Select Department */}
+                        <select className="input-style text-gray-900">
+                            <option value="" disabled selected className="text-gray-300">
+                                Select Department
+                            </option>
                             <option>General Dentistry</option>
                             <option>Orthodontics</option>
                             <option>Cosmetic Dentistry</option>

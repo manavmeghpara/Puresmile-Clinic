@@ -8,10 +8,10 @@ const Quote = () => {
     const isInView = useInView(ref, { amount: 0.3, once: false });
 
     return (
-        <section ref={ref} className="text-center py-16 px-6 md:px-20 bg-white text-sky-800">
+        <section ref={ref} className="text-center pt-20 px-6 md:px-20 bg-white text-sky-800">
             {/* Text Animation */}
             <motion.p
-                className="text-lg md:text-2xl font-medium leading-relaxed"
+                className="md:text-xl font-medium leading-relaxed"
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1, ease: "easeOut" }}

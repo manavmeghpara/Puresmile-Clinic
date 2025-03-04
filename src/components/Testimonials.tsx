@@ -82,8 +82,8 @@ const Testimonials = () => {
                             transition={{ duration: 0.8, delay: index * 0.2 }}>
 
                             {/* Profile Image - ✅ Updated with Next.js Image */}
-                            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 border-4 border-white rounded-full overflow-hidden shadow-md hover:scale-110 transition duration-200 ">
-                                <Image src={testimonial.image} alt={testimonial.name} width={80} height={80} className="rounded-full object-cover" />
+                            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[60px] h-[60px] border-4 border-white rounded-full overflow-hidden shadow-md hover:scale-110 transition duration-200 ">
+                                <Image src={testimonial.image} alt={testimonial.name} width={70} height={70} className="rounded-full object-cover" />
                             </div>
 
                             {/* Name & Review */}

@@ -4,12 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { FaHome, FaTooth, FaPhoneAlt } from "react-icons/fa";
+import { FaHome, FaTooth, FaPhoneAlt, FaCommentDots   } from "react-icons/fa";
 
 const navLinks = [
     { title: "Home", path: "#hero", icon: <FaHome /> },
     { title: "Services", path: "#services", icon: <FaTooth /> },
-    { title: "Reviews", path: "#reviews", icon: <FaTooth /> },
+    { title: "Reviews", path: "#reviews", icon: <FaCommentDots   /> },
     { title: "Contact", path: "#contact", icon: <FaPhoneAlt /> },
 ];
 
@@ -37,20 +37,21 @@ const Nav = () => {
     };
 
     return (
-        <nav className="fixed w-full top-0 z-50 flex justify-center h-16 text-black font-semibold">
+        <nav className="fixed w-full top-0 z-50 flex justify-center h-16 text-black/80 font-semibold">
             {/* Desktop Navbar */}
             <div className="hidden md:flex items-center justify-between w-full backdrop-blur-lg drop-shadow-lg bg-white/85 py-3 px-24">
                 <div className="flex items-center">
-                    <Image alt="logo" src="/favicon.ico" width={30} height={30} className="mr-2 border-2 border-gray-500 rounded-full" />
-                    <span className="text-lg font-bold text-sky-800">PureSmile Clinic</span>
+                    <Link href="https://github.com/Sahasawat-Boss" target="_blank" rel="noopener noreferrer">                        <Image alt="logo" src="/favicon.ico" width={35} height={35} className="mr-2 border-2 border-gray-500 rounded-full hover:scale-110 transition " />
+                    </Link>
+                    <p className="text-xl font-bold text-sky-800">PureSmile Clinic <span className="text-base text-blue-400"> [ Demo ]</span> </p>
                 </div>
-                <ul className="flex space-x-9">
+                <ul className="flex space-x-4">
                     {navLinks.map((link, index) => (
                         <li key={index}>
                             <Link
                                 href={link.path}
                                 onClick={(e) => handleSmoothScroll(e, link.path)}
-                                className="flex items-center gap-2 hover:text-sky-700 transition-all duration-300"
+                                className="flex items-center gap-1.5 hover:text-sky-600 hover:scale-105 hover:underline underline-offset-4 transition-all duration-300"
                             >
                                 {link.icon} {link.title}
                             </Link>

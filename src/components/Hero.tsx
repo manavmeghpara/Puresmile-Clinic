@@ -22,7 +22,7 @@ const Hero = () => {
         <section id="hero" ref={ref}
             className="bg-white flex justify-center items-center py-4 pt-16">
             <motion.div
-                className="relative flex flex-col md:flex-row items-center justify-between p-8 md:p-12 bg-sky-100 mx-4 rounded-[50px] shadow-lg max-w-7xl w-full"
+                className="relative flex flex-col gap-x-3 md:flex-row items-center justify-between p-8 md:p-12 bg-sky-100 mx-4 rounded-[40px] shadow-lg max-w-7xl w-full"
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, ease: "easeOut" }}
@@ -45,7 +45,7 @@ const Hero = () => {
 
                     {/* Call to Action */}
                     <motion.div
-                        className="mt-6 flex flex-col md:flex-row items-center gap-4"
+                        className="mt-6 flex flex-col md:flex-row items-center gap-x-4 gap-y-6"
                         initial={{ opacity: 0, y: 30 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.8, delay: 0.4 }}
@@ -76,11 +76,11 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.3 }}
                 >
                     <Image
-                        src="/pics/clinic2.avif"
+                        src="/pics/clinic-ai.webp"
                         alt="Smiling Patient"
-                        width={480}
-                        height={480}
-                        className="rounded-3xl shadow-md"
+                        width={500}
+                        height={500}
+                        className="rounded-lg shadow-md"
                     />
 
                     {/* Floating Doctor Info - Click to Open Modal */}
