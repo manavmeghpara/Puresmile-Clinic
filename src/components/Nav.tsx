@@ -9,6 +9,7 @@ import { FaHome, FaTooth, FaPhoneAlt } from "react-icons/fa";
 const navLinks = [
     { title: "Home", path: "#hero", icon: <FaHome /> },
     { title: "Services", path: "#services", icon: <FaTooth /> },
+    { title: "Reviews", path: "#reviews", icon: <FaTooth /> },
     { title: "Contact", path: "#contact", icon: <FaPhoneAlt /> },
 ];
 

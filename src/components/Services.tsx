@@ -24,8 +24,7 @@ const Services = () => {
     const isInView = useInView(ref, { once: false, amount: 0.3 });
 
     return (
-        <section ref={ref} id="services"
-            className="bg-white text-sky-700 py-20 px-6 md:px-16">
+        <section ref={ref} id="services" className="bg-white text-sky-700 pt-20 py-12 px-6 md:px-16">
             <div className="max-w-6xl mx-auto">
                 {/* Title */}
                 <motion.h2
@@ -38,25 +37,24 @@ const Services = () => {
                 </motion.h2>
 
                 {/* Services Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     {services.map((service, index) => (
                         <motion.div
                             key={service.id}
-                            className="p-6 bg-sky-100 rounded-lg shadow-md flex flex-col items-center text-center sm:items-start sm:text-left "
+                            className="p-6 bg-sky-100 rounded-lg shadow-md flex flex-col items-center text-center "
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                             transition={{ duration: 0.6, delay: index * 0.15 }}
                         >
-                            <div className="hover:scale-105 transition duration-150">
-                                {/* Icon */}
-                                <div className="text-sky-700 bg-white p-3 w-fit rounded-full shadow-lg mb-3 text-3xl">
+                            {/* Icon - Centered */}
+                            <div className="flex flex-col justify-center items-center hover:scale-110 transition duration-200 ">
+                                <div className="flex justify-center items-center  w-10 h-10 bg-white text-sky-700 rounded-full shadow-lg text-2xl mb-4">
                                     {service.icon}
                                 </div>
 
                                 {/* Title & Description */}
                                 <h3 className="text-xl font-semibold">{service.title}</h3>
                                 <p className="text-sky-800 text-sm mt-2">{service.description}</p>
-
                             </div>
                         </motion.div>
                     ))}
