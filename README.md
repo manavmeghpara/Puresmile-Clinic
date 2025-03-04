@@ -8,7 +8,7 @@
 
 ## 🚀 Live Demo 
 
-🔗 https://puresmile-clinic.vercel.app/
+🔗 https://puresmile-clinic-by-boss-demo.vercel.app/
 
 ## 📌 Features
 
