@@ -42,7 +42,8 @@ const Nav = () => {
             {/* Desktop Navbar */}
             <div className="hidden md:flex items-center justify-between w-full backdrop-blur-lg drop-shadow-lg bg-white/85 py-3 px-12">
                 <div className="flex items-center">
-                    <Link href="https://github.com/Sahasawat-Boss" target="_blank" rel="noopener noreferrer">                        <Image alt="logo" src="/favicon.ico" width={35} height={35} className="mr-2 border-2 border-gray-500 rounded-full hover:scale-110 transition " />
+                    <Link href="https://github.com/Sahasawat-Boss" target="_blank" rel="noopener noreferrer">
+                    <Image alt="logo" src="/favicon.ico" width={35} height={35} className="mr-2 border-2 border-gray-500 rounded-full hover:scale-110 transition " />
                     </Link>
                     <p className="text-xl font-bold text-sky-800">PureSmile Clinic <span className="text-base text-blue-400"> [ Demo ]</span> </p>
                 </div>

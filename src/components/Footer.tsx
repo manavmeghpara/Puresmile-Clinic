@@ -12,8 +12,9 @@ export const Footer = () => {
                 <div className="w-full border-t border-gray-300 mb-6"></div>
 
                 {/* Footer Text */}
-                <p className="text-lg font-semibold">© 2025 Boss&apos;s Org. All rights reserved.</p>
-
+                <p className="text-lg font-semibold">
+                    © {new Date().getFullYear()} BSynth All rights reserved.
+                </p>
                 {/* Social Icons */}
                 <ul className="flex gap-6 mt-6">
                     {socialLinks.map(({ href, Icon, label }) => (
