@@ -31,7 +31,7 @@ const Services = () => {
                     className="text-3xl md:text-4xl font-bold uppercase text-center mb-10"
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
-                    variants={fadeInVariants}
+                    variants={{fadeInVariants}}
                 >
                     Our Dental Services
                 </motion.h2>

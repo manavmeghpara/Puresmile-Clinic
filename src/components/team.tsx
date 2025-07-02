@@ -42,7 +42,7 @@ const Team = () => {
                     className="text-3xl md:text-4xl font-bold text-center mb-6"
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
-                    variants={fadeInVariants}
+                    variants={{fadeInVariants}}
                 >
                     Meet Our Team
                 </motion.h2>
