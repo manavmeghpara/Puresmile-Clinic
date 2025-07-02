@@ -45,7 +45,7 @@ const Nav = () => {
                     <Link href="https://github.com/Sahasawat-Boss" target="_blank" rel="noopener noreferrer">
                     <Image alt="logo" src="/favicon.ico" width={35} height={35} className="mr-2 border-2 border-gray-500 rounded-full hover:scale-110 transition " />
                     </Link>
-                    <p className="text-xl font-bold text-sky-800">Smitam Clinic <span className="text-base text-blue-400"> [ Demo ]</span> </p>
+                    <p className="text-xl font-bold text-sky-800">Smitam Clinic </p>
                 </div>
                 <ul className="flex space-x-6">
                     {navLinks.map((link, index) => (
