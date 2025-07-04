@@ -1,7 +1,8 @@
-import { AiFillGithub } from "react-icons/ai";
+import { AiFillFacebook, AiFillGithub, AiFillInstagram } from "react-icons/ai";
 
 const socialLinks = [
-    { href: "https://github.com/Sahasawat-Boss", Icon: AiFillGithub, label: "GitHub" },
+    { href: "https://www.instagram.com/smitamdentalstudio308/", Icon: AiFillInstagram, label: "Instagram" },
+    { href: "https://www.facebook.com/people/Smitam-Multi-Speciality-Dental-Studio/61576657995781/#", Icon: AiFillFacebook, label: "Facebook"},
 ];
 
 export const Footer = () => {
@@ -13,7 +14,7 @@ export const Footer = () => {
 
                 {/* Footer Text */}
                 <p className="text-lg font-semibold">
-                    © {new Date().getFullYear()} BSynth All rights reserved.
+                    © {new Date().getFullYear()} SMITAM All rights reserved.
                 </p>
                 {/* Social Icons */}
                 <ul className="flex gap-6 mt-6">

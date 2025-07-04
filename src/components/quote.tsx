@@ -16,7 +16,7 @@ const Quote = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1, ease: "easeOut" }}
             >
-                At PureSmile Clinic, we redefine dental care with a patient-first approach,
+                At Smitam Clinic, we redefine dental care with a patient-first approach,
                 offering top-tier treatments for a confident, healthy smile.
             </motion.p>
 

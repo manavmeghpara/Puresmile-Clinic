@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PureSmile Clinic",
-  description: "PureSmile Clinic",
+  title: "Smitam Clinic",
+  description: "Smitam Clinic",
 };
 
 export default function RootLayout({

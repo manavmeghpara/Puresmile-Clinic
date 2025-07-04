@@ -9,40 +9,73 @@ const Appointment = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, { amount: 0.3, once: false });
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [showRajkotMap, setShowRajkotMap] = useState(true);
+    const [showChotilaMap, setShowChotilaMap] = useState(false);
+
 
     return (
         <>
             <section ref={ref} id="contact"
                 className="pt-16 pb-6 px-6 md:px-16 bg-white text-sky-900">
-                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
+                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 items-stretch">
                     {/* Left Side - Map */}
                     <motion.div
-                        className="relative w-full h-60 sm:h-96 md:col-span-2 bg-gray-200 rounded overflow-hidden shadow-lg"
+                        className="p-8 bg-sky-50 rounded-3xl shadow-lg md:col-span-2 h-full flex flex-col gap-4"
                         initial={{ opacity: 0, x: -50 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <iframe
-                            className="w-full h-full"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.259238621566!2d99.016675!3d18.802811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30da3bb7cfd9b8ef%3A0x1234567890abcdef!2sChiang%20Mai%20Dental%20Clinic!5e0!3m2!1sen!2sth!4v1701234567890!5m2!1sen!2sth"
-                            allowFullScreen
-                            loading="lazy"
-                        ></iframe>
+                        {/* Rajkot Button */}
+                        <button
+                            onClick={() => {
+                                setShowRajkotMap(!showRajkotMap);
+                                setShowChotilaMap(false);
+                            }}
+                            className="bg-sky-700 text-white px-4 py-2 rounded-lg shadow hover:bg-sky-500 transition w-full"
+                        >
+                            Rajkot Branch
+                        </button>
 
-                        {/* Address Box */}
-                        <div className="absolute bottom-24 md:bottom-44 left-28 md:left-32 bg-white p-2 rounded-lg shadow-lg shadow-black/50 flex items-center gap-3">
-                            <div className="w-8 h-8 bg-sky-200 text-white flex items-center justify-center rounded-lg">
-                                <FaMapMarkerAlt className="text-lg text-red-500" />
+                        {/* Rajkot Map */}
+                        {showRajkotMap && (
+                            <div className="w-full h-60 sm:h-80 relative">
+                                <iframe
+                                    className="w-full h-full rounded"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.359310872827!2d70.7596458!3d22.2942768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959cb19d39d77c7%3A0xbedb6623ee799ac8!2sSmitam%20Multi%20Speciality%20Dental%20Studio!5e0!3m2!1sen!2sin!4v1720000000000!5m2!1sen!2sin"
+                                    allowFullScreen
+                                    loading="lazy"
+                                ></iframe>
                             </div>
-                            <p className="text-sm font-semibold text-gray-900">
-                                Demo PureSmile
-                            </p>
-                        </div>
+                        )}
+
+                        {/* Chotila Button */}
+                        <button
+                            onClick={() => {
+                                setShowChotilaMap(!showChotilaMap);
+                                setShowRajkotMap(false);
+                            }}
+                            className="bg-sky-700 text-white px-4 py-2 rounded-lg shadow hover:bg-sky-500 transition w-full"
+                        >
+                            Chotila Branch
+                        </button>
+
+                        {/* Chotila Map */}
+                        {showChotilaMap && (
+                            <div className="w-full h-60 sm:h-80 relative">
+                                <iframe
+                                    className="w-full h-full rounded"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3714.576437453659!2d71.1933101!3d22.4187663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395907e6b6ea920f%3A0x8618a69001fb7930!2sMaa%20dental%20%26%20poly%20clinic!5e0!3m2!1sen!2sin!4v1720012345678!5m2!1sen!2sin"
+                                    allowFullScreen
+                                    loading="lazy"
+                                ></iframe>
+                            </div>
+                        )}
                     </motion.div>
+
 
                     {/* Right Side - Form */}
                     <motion.div
-                        className="p-8 bg-sky-50 rounded-3xl shadow-lg md:col-span-3"
+                        className="p-8 bg-sky-50 rounded-3xl shadow-lg md:col-span-3 h-full flex flex-col justify-between"
                         initial={{ opacity: 0, x: 50 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -82,11 +115,13 @@ const Appointment = () => {
                         <div className="flex flex-col sm:flex-row items-center justify-between mt-6">
                             <div className="flex items-center gap-2">
                                 <div className="w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center">
-                                    <FaPhoneAlt className="text-sky-700 text-lg" />
+                                    <a href="tel:+917859836056">
+                                        <FaPhoneAlt className="text-sky-700 text-lg cursor-pointer hover:text-sky-500 transition" />
+                                    </a>
                                 </div>
                                 <div>
                                     <p className="text-sky-700 font-semibold text-sm">24/7 Emergency</p>
-                                    <p className="text-gray-900 font-bold text-lg">03 482 394 123</p>
+                                    <p className="text-gray-900 font-bold text-lg">+91 7859836056</p>
                                 </div>
                             </div>
 

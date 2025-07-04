@@ -8,24 +8,24 @@ import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 const testimonials = [
     {
         id: 1,
-        name: "Nathan Johnson",
-        image: "/pics/testimonials/profile-ai3.webp",
-        review: "The best dental experience I've had! The staff at PureSmile Clinic were both friendly and professional",
+        name: "Yogesh Singal",
+        image: "/pics/testimonials/Y.png",
+        review: "Wonderful experience best treatment provided by dr. Shubham very happy with services thank you 😊",
         rating: 5
     },
     {
         id: 2,
-        name: "Michael Smithree",
-        image: "/pics/testimonials/profile-ai7.webp",
+        name: "Manav Patel",
+        image: "/pics/testimonials/manav.png",
         review: "I was nervous about my root canal, but they made me feel comfortable. The procedure was painless, and the result was fantastic!",
-        rating: 4.5
+        rating: 5
     },
     {
         id: 3,
-        name: "Sophia Martinez",
-        image: "/pics/testimonials/profile-ai4.webp",
-        review: "Great service. I love my new smile! Highly recommend PureSmile Clinic.",
-        rating: 4
+        name: "Ankit Patel",
+        image: "/pics/testimonials/Ankit.jpg",
+        review: "The best dental experience I've had! The staff at Smitam Clinic were both friendly and professional",
+        rating: 5
     }
 ];
 
@@ -69,7 +69,7 @@ const Testimonials = () => {
                         initial={{ opacity: 0, y: -20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.8, delay: 0.4 }}>
-                        Hear from our happy patients about their experiences at PureSmile Clinic.
+                        Hear from our happy patients about their experiences at Smitam Clinic.
                     </motion.p>
                 </div>
 
