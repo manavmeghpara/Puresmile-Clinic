@@ -5,12 +5,49 @@ import { useRef, useState } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 
+
 const Appointment = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, { amount: 0.3, once: false });
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [showRajkotMap, setShowRajkotMap] = useState(true);
     const [showChotilaMap, setShowChotilaMap] = useState(false);
+
+    const handleBooking = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.currentTarget);
+
+        const bookingData = {
+            name: formData.get("name"),
+            email: formData.get("email"),
+            service: formData.get("service"),
+            department: formData.get("department"),
+            message: formData.get("message"),
+        };
+
+        console.log("Booking Data:", bookingData);
+
+        try {
+            const res = await fetch("/api/book-appointment", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(bookingData),
+            });
+
+            if (res.ok) {
+                alert("Appointment request sent successfully!");
+                (document.getElementById("my-form") as HTMLFormElement).reset();
+            } else {
+                const errorData = await res.json();
+                alert(`Error: ${errorData.error}`);
+            }
+        } catch (err) {
+            console.error(err);
+            alert("Error sending appointment request.");
+        }
+    };
+
 
 
     return (
@@ -86,11 +123,15 @@ const Appointment = () => {
                         </p>
 
                         {/* Form */}
-                        <form className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-6 ">
-                            <input type="text" placeholder="Your Name" className="input-style" />
-                            <input type="email" placeholder="Your Email" className="input-style" />
+                        <form
+                            id='my-form'
+                            onSubmit={handleBooking}
+                            className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-6 "
+                        >
+                            <input name="name" type="text" placeholder="Your Name" className="input-style" required/>
+                            <input name="email" type="email" placeholder="Your Email" className="input-style" required />
                             {/* Select Service */}
-                            <select className="input-style text-gray-900" defaultValue="">
+                            <select name="service" className="input-style text-gray-900" required defaultValue="">
                                 <option value="" disabled className="text-gray-500">
                                     Select Service
                                 </option>
@@ -100,7 +141,7 @@ const Appointment = () => {
                             </select>
 
                             {/* Select Department */}
-                            <select className="input-style text-gray-900" defaultValue="">
+                            <select name="department" className="input-style text-gray-900" required defaultValue="">
                                 <option value="" disabled className="text-gray-500">
                                     Select Department
                                 </option>
@@ -108,30 +149,34 @@ const Appointment = () => {
                                 <option>Orthodontics</option>
                                 <option>Cosmetic Dentistry</option>
                             </select>
-                            <textarea placeholder="Enter your message..." className="input-style col-span-1 sm:col-span-2 h-32"></textarea>
+                            <textarea name="message" placeholder="Enter your message..." className="input-style col-span-1 sm:col-span-2 h-32"></textarea>
                         </form>
+                
+                            {/* Contact & Booking Section */}
+                            <div className="flex flex-col sm:flex-row items-center justify-between mt-6">
+                                <div className="flex items-center gap-2">
+                                    <div className="w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center">
+                                        <a href="tel:+917859836056">
+                                            <FaPhoneAlt className="text-sky-700 text-lg cursor-pointer hover:text-sky-500 transition" />
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <p className="text-sky-700 font-semibold text-sm">24/7 Emergency</p>
+                                        <p className="text-gray-900 font-bold text-lg">+91 7859836056</p>
+                                    </div>
+                                </div>
 
-                        {/* Contact & Booking Section */}
-                        <div className="flex flex-col sm:flex-row items-center justify-between mt-6">
-                            <div className="flex items-center gap-2">
-                                <div className="w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center">
-                                    <a href="tel:+917859836056">
-                                        <FaPhoneAlt className="text-sky-700 text-lg cursor-pointer hover:text-sky-500 transition" />
-                                    </a>
-                                </div>
-                                <div>
-                                    <p className="text-sky-700 font-semibold text-sm">24/7 Emergency</p>
-                                    <p className="text-gray-900 font-bold text-lg">+91 7859836056</p>
-                                </div>
+                                <button
+                                    type="submit"
+                                    form="my-form"
+                                    className="bg-sky-700 text-white px-4 py-3 rounded-lg text-lg font-semibold shadow-lg hover:bg-sky-500 transition mt-4 sm:mt-0"
+                                >
+                                    Book an appointment
+                                </button>
+
                             </div>
+                       
 
-                            <button
-                                className="bg-sky-700 text-white px-4 py-3 rounded-lg text-lg font-semibold shadow-lg hover:bg-sky-500 transition mt-4 sm:mt-0"
-                                onClick={() => setIsModalOpen(true)}
-                            >
-                                Book an appointment
-                            </button>
-                        </div>
                     </motion.div>
                 </div>
             </section>
