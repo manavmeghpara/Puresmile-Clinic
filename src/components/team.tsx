@@ -15,7 +15,7 @@ interface TeamMember {
 const teamMembers = [
     {
         name: "Dr. Mili Meghpara",
-        role: "Paediatric (kids) dentist (B.D.S., M.D.S.)",
+        role: "Paediatric dentist (B.D.S., M.D.S.)",
         image: "/pics/Mili.png",
         bgColor: "bg-blue-100",
         description: "🏅 DOUBLE GOLD MEDALIST (B.D.S., M.D.S.)🔹 Super Specialist in Children’s Dental care & Root Canal Treatments",

@@ -39,6 +39,16 @@ const Nav = () => {
 
     return (
         <nav className="fixed w-full top-0 z-50 flex justify-center h-16 text-black/80 font-semibold">
+            {/* Mobile Header with Logo */}
+            {/* Mobile Header with Centered Logo */}
+            <div className="md:hidden flex items-center justify-center w-full backdrop-blur-lg drop-shadow-lg bg-white/85 py-3 px-6">
+                <Link href="https://smitam.onrender.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                    <Image alt="logo" src="/favicon.ico" width={32} height={32} className="border border-gray-500 rounded-full hover:scale-110 transition" />
+                    <p className="text-lg font-bold text-sky-800">Smitam Clinic</p>
+                </Link>
+            </div>
+
+
             {/* Desktop Navbar */}
             <div className="hidden md:flex items-center justify-between w-full backdrop-blur-lg drop-shadow-lg bg-white/85 py-3 px-12">
                 <div className="flex items-center">

@@ -79,7 +79,7 @@ const Hero = () => {
 
                 {/* Right Image */}
                 <motion.div
-                    className="md:w-1/2 flex justify-center mt-10 md:mt-0 relative"
+                    className="w-full md:w-1/2 flex justify-center mt-10 md:mt-0 relative overflow-visible"
                     initial={{ opacity: 0, x: 50 }}
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.8, delay: 0.3 }}
@@ -101,7 +101,7 @@ const Hero = () => {
                                 description: "🏅 DOUBLE GOLD MEDALIST (B.D.S., M.D.S.)🔹 Super Specialist in Children’s Dental care & Root Canal Treatments",
                                 image: "/pics/Mili.png"
                             })}
-                            className="absolute bottom-5 left-5 bg-white rounded-lg shadow-md flex items-center py-1.5 px-3 gap-3 cursor-pointer"
+                            className="absolute -bottom-2 left-1 -translate-x-1/2 sm:top-auto sm:bottom-5 sm:left-5 sm:translate-x-0 bg-white rounded-lg shadow-md flex items-center py-1 px-2 sm:py-1.5 sm:px-3 gap-2 sm:gap-3 cursor-pointer"
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={isInView ? { opacity: 1, scale: 1 } : {}}
                             transition={{ duration: 0.8, delay: 0.5 }}
@@ -119,8 +119,8 @@ const Hero = () => {
                                 title: "(B.D.S., M.D.S.) Prosthodontist",
                                 description: "Master in Cortico Basal Implant – Munich, Germany | Super Specialist in Basal Implants 🦷",
                                 image: "/pics/Shubham.png"
-                            })}
-                            className="absolute bottom-5 right-5 bg-white rounded-lg shadow-md flex items-center py-1.5 px-3 gap-3 cursor-pointer"
+                            })} 
+                            className="absolute -bottom-20 left-1 -translate-x-1/2 sm:bottom-5 sm:right-5 sm:left-auto sm:translate-x-0 bg-white rounded-lg shadow-md flex items-center py-1 px-2 sm:py-1.5 sm:px-3 gap-2 sm:gap-3 cursor-pointer"
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={isInView ? { opacity: 1, scale: 1 } : {}}
                             transition={{ duration: 0.8, delay: 0.5 }}
