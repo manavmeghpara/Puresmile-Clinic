@@ -1,4 +1,4 @@
-import { AiFillFacebook, AiFillGithub, AiFillInstagram } from "react-icons/ai";
+import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
 
 const socialLinks = [
     { href: "https://www.instagram.com/smitamdentalstudio308/", Icon: AiFillInstagram, label: "Instagram" },

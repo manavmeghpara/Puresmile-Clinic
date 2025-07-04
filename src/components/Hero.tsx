@@ -15,7 +15,6 @@ interface Doctor {
 const Hero = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: false, amount: 0.3 });
-    const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedDoctor, setSelectedDoctor] = useState<Doctor | null>(null);
 
     // ✅ Scroll to Contact Section
