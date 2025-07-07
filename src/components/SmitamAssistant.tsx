@@ -10,7 +10,7 @@ const SmitamAssistant = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState<{ role: string; content: string }[]>([]);
     const [input, setInput] = useState("");
-    const [sessionId, setSessionId] = useState(uuidv4());
+    const [sessionId] = useState(uuidv4());
     const [loading, setLoading] = useState(false);
     const chatRef = useRef<HTMLDivElement>(null);
 
