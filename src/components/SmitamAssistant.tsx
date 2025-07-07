@@ -90,7 +90,7 @@ const SmitamAssistant = () => {
                             {messages.map((msg, idx) => (
                                 <div
                                     key={idx}
-                                    className={`p-2 rounded-lg max-w-[80%] ${msg.role === "user" ? "ml-auto bg-sky-100" : "mr-auto bg-gray-100"}`}
+                                    className={`p-2 rounded-lg max-w-[80%] ${msg.role === "user" ? "ml-auto bg-sky-100 text-black" : "mr-auto bg-gray-100 text-black"}`}
                                 >
                                     <p className="text-sm">{msg.content}</p>
                                 </div>
