@@ -113,7 +113,7 @@ const SmitamAssistant = () => {
                                 onChange={(e) => setInput(e.target.value)}
                                 onKeyDown={(e) => e.key === "Enter" && handleSend()}
                                 placeholder="Ask a health question..."
-                                className="flex-1 border rounded px-3 py-2 text-sm"
+                                className="flex-1 border border-gray-300 rounded px-3 py-2 text-sm text-black bg-white focus:outline-none focus:ring-2 focus:ring-sky-400"
                             />
                             <button onClick={handleSend} className="bg-sky-700 text-white px-4 rounded hover:bg-sky-500 text-sm">
                                 Send
