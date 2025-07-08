@@ -21,7 +21,7 @@ try {
 
         await client.messages.create(process.env.MAILGUN_DOMAIN || "", {
             from: "Mailgun Sandbox <postmaster@smitamdentalstudio.com>",
-            to: "manav09meghpara@gmail.com",
+            to: "smitamdentalclinic308@gmail.com",
             subject: "New Appointment Booking",
             text: `
                 New Appointment Request:
