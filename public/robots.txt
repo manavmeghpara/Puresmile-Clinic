@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.smitamdentalstudio.com/
+
+# Sitemaps
+Sitemap: https://www.smitamdentalstudio.com/sitemap.xml
