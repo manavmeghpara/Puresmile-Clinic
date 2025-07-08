@@ -42,13 +42,14 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-snug">
-                        Your Smile, Our Priority
+                        Your Smile, Our Priority | Smitam Dental Studio
                     </h1>
 
                     <p className="mt-4 text-gray-700 text-lg">
-                        Get expert dental care with cutting-edge technology and a gentle touch.
-                        Book an appointment today!
+                        Experience expert dental care with cutting-edge technology and a gentle touch. 
+                        Serving Rajkot and Chotila with compassion and precision. Book your appointment today.
                     </p>
+
 
                     {/* Call to Action */}
                     <motion.div

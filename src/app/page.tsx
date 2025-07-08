@@ -8,6 +8,7 @@ import Quote from "@/components/quote";
 import Team from "@/components/team";
 import SmitamAssistant from "@/components/SmitamAssistant";
 
+
 export default function Home() {
   return (
     <>
