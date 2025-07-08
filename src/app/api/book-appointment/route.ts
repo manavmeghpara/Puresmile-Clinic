@@ -20,7 +20,7 @@ try {
         }
 
         await client.messages.create(process.env.MAILGUN_DOMAIN || "", {
-            from: "Mailgun Sandbox <postmaster@sandbox1116381035c7430c9f3c5d29a4626cb4.mailgun.org>",
+            from: "Mailgun Sandbox <postmaster@smitamdentalstudio.com>",
             to: "manav09meghpara@gmail.com",
             subject: "New Appointment Booking",
             text: `
